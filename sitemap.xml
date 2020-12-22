@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://cincan.wang/2020/12/18/first-application/</loc>
+    
+    <lastmod>2020-12-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cincan.wang/2020/12/19/rust/</loc>
+    
+    <lastmod>2020-12-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cincan.wang/2020/12/21/%E5%92%8C-equals-%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    
+    <lastmod>2020-12-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cincan.wang/about/index.html</loc>
+    
+    <lastmod>2020-12-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cincan.wang/archives/index.html</loc>
+    
+    <lastmod>2020-12-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cincan.wang/categories/index.html</loc>
+    
+    <lastmod>2020-12-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cincan.wang/tags/index.html</loc>
+    
+    <lastmod>2020-12-22</lastmod>
+    
+  </url>
+  
+
+  <url>
+    <loc>http://cincan.wang/</loc>
+    <lastmod>2020-12-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+
+  
+</urlset>

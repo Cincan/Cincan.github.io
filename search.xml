@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>== 和 equals 的区别</title>
+      <link href="2020/12/21/%E5%92%8C-equals-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>2020/12/21/%E5%92%8C-equals-%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="和-equals-的区别是什么？"><a href="#和-equals-的区别是什么？" class="headerlink" title="== 和 equals 的区别是什么？"></a>== 和 equals 的区别是什么？</h1><h2 id="解读"><a href="#解读" class="headerlink" title="== 解读"></a>== 解读</h2><p>对于基本类型和引用类型 == 的作用效果是不同的，如下所示：</p><ul><li><p>基本类型：比较的是值是否相同；</p></li><li><p>引用类型：比较的是引用是否相同；</p></li></ul><p>代码示例：</p><pre><code class="java">String x = &quot;string&quot;;String y = &quot;string&quot;;String z = new String(&quot;string&quot;);System.out.println(x==y); // trueSystem.out.println(x==z); // falseSystem.out.println(x.equals(y)); // trueSystem.out.println(x.equals(z)); // true</code></pre><p>代码解读：因为 x 和 y 指向的是同一个引用，所以 == 也是 true，而 new String()方法则重写开辟了内存空间，所以 == 结果为 false，而 equals 比较的一直是值，所以结果都为 true。  </p><h2 id="equals-解读"><a href="#equals-解读" class="headerlink" title="equals 解读"></a>equals 解读</h2><p>equals 本质上就是 ==，只不过 String 和 Integer 等重写了 equals 方法，把它变成了值比较。看下面的代码就明白了。</p><p>首先来看默认情况下 equals 比较一个有相同值的对象，代码如下：</p><pre><code class="java">class Cat &#123;    public Cat(String name) &#123;        this.name = name;    &#125;    private String name;    public String getName() &#123;        return name;    &#125;    public void setName(String name) &#123;        this.name = name;    &#125;&#125;Cat c1 = new Cat(&quot;c&quot;);Cat c2 = new Cat(&quot;c&quot;);System.out.println(c1.equals(c2)); // false</code></pre><p>输出结果出乎我们的意料，竟然是 false？这是怎么回事，看了 equals 源码就知道了，源码如下：</p><pre><code class="java">public boolean equals(Object obj) &#123;    return (this == obj);&#125;</code></pre><p>原来 equals 本质上就是 ==。</p><p>那问题来了，两个相同值的 String 对象，为什么返回的是 true？代码如下：</p><pre><code class="java">String s1 = new String(&quot;老王&quot;);String s2 = new String(&quot;老王&quot;);System.out.println(s1.equals(s2)); // true</code></pre><p>同样的，当我们进入 String 的 equals 方法，找到了答案，代码如下：</p><pre><code class="java">public boolean equals(Object anObject) &#123;    if (this == anObject) &#123;        return true;    &#125;    if (anObject instanceof String) &#123;        String anotherString = (String)anObject;        int n = value.length;        if (n == anotherString.value.length) &#123;            char v1[] = value;            char v2[] = anotherString.value;            int i = 0;            while (n-- != 0) &#123;                if (v1[i] != v2[i])                    return false;                i++;            &#125;            return true;        &#125;    &#125;    return false;&#125;</code></pre><p>原来是 String 重写了 Object 的 equals 方法，把引用比较改成了值比较。</p><p>总结 ：== 对于基本类型来说是值比较，对于引用类型来说是比较的是引用；而 equals 默认情况下是引用比较，只是很多类重新了 equals 方法，比如 String、Integer 等把它变成了值比较，所以一般情况下 equals 比较的是值是否相等。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>rust</title>
+      <link href="2020/12/19/rust/"/>
+      <url>2020/12/19/rust/</url>
+      
+        <content type="html"><![CDATA[<h1 id="为什么要使用-Rust-语言？Rust-语言的优势在哪里？"><a href="#为什么要使用-Rust-语言？Rust-语言的优势在哪里？" class="headerlink" title="为什么要使用 Rust 语言？Rust 语言的优势在哪里？"></a>为什么要使用 Rust 语言？Rust 语言的优势在哪里？</h1><p>为什么要使用 Rust 语言？Rust 语言的优势在哪里？</p><ul><li>系统级语言，以libc为基础  </li><li>C++ 是灵魂，采用了很多新型语言特性。 函数编程、接口等   </li><li>生命周期管理是独特创新，去掉GC。但也是负担，造成了开发上的迷惑。希望能够未来编译器自动识别生命周期，不要手工标注极致  </li><li>追求性能的语言。语言级 zero cost abstractions</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>first-application</title>
+      <link href="2020/12/18/first-application/"/>
+      <url>2020/12/18/first-application/</url>
+      
+        <content type="html"><![CDATA[<h1 id="这是我的第一个-Java-应用"><a href="#这是我的第一个-Java-应用" class="headerlink" title="这是我的第一个 Java 应用"></a>这是我的第一个 Java 应用</h1><pre><code class="java">class Main () &#123;    public static void main(string args[])&#123;        System.out.println(&quot;hello world&quot;);    &#125;&#125;</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
