@@ -75,6 +75,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-两个对象的-hashCode-相同，则-equals-也一定为-true，对吗？" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/12/22/%E4%B8%A4%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84-hashCode-%E7%9B%B8%E5%90%8C%EF%BC%8C%E5%88%99-equals-%E4%B9%9F%E4%B8%80%E5%AE%9A%E4%B8%BA-true%EF%BC%8C%E5%AF%B9%E5%90%97%EF%BC%9F/" class="article-date">
+  <time class="dt-published" datetime="2020-12-22T22:13:46.000Z" itemprop="datePublished">2020-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/12/22/%E4%B8%A4%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84-hashCode-%E7%9B%B8%E5%90%8C%EF%BC%8C%E5%88%99-equals-%E4%B9%9F%E4%B8%80%E5%AE%9A%E4%B8%BA-true%EF%BC%8C%E5%AF%B9%E5%90%97%EF%BC%9F/">两个对象的 hashCode()相同，则 equals()也一定为 true，对吗？</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="两个对象的-hashCode-相同，则-equals-也一定为-true，对吗？"><a href="#两个对象的-hashCode-相同，则-equals-也一定为-true，对吗？" class="headerlink" title="两个对象的 hashCode()相同，则 equals()也一定为 true，对吗？"></a>两个对象的 hashCode()相同，则 equals()也一定为 true，对吗？</h1><p>不对，两个对象的 hashCode()相同，equals()不一定 true。<br>代码示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">&quot;通话&quot;</span>;</span><br><span class="line">String str2 = <span class="string">&quot;重地&quot;</span>;</span><br><span class="line">System.out.println(String.format(<span class="string">&quot;str1：%d | str2：%d&quot;</span>,  str1.hashCode(),str2.hashCode()));</span><br><span class="line">System.out.println(str1.equals(str2));</span><br></pre></td></tr></table></figure>
+<p>执行的结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str1：<span class="number">1179395</span> | str2：<span class="number">1179395</span></span><br><span class="line"><span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+<p>代码解读：很显然“通话”和“重地”的 hashCode() 相同，然而 equals() 则为 false，因为在散列表中，hashCode()相等即两个键值对的哈希值相等，然而哈希值相等，并不一定能得出键值对相等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cincan.wang/2020/12/22/%E4%B8%A4%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84-hashCode-%E7%9B%B8%E5%90%8C%EF%BC%8C%E5%88%99-equals-%E4%B9%9F%E4%B8%80%E5%AE%9A%E4%B8%BA-true%EF%BC%8C%E5%AF%B9%E5%90%97%EF%BC%9F/" data-id="ckj02nnwx00021lr7ajp66laq" data-title="两个对象的 hashCode()相同，则 equals()也一定为 true，对吗？" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-和-equals-的区别" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2020/12/21/%E5%92%8C-equals-%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
@@ -124,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cincan.wang/2020/12/21/%E5%92%8C-equals-%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckj02h01f000212pohmml1q7d" data-title="== 和 equals 的区别" class="article-share-link">Share</a>
+      <a data-url="http://cincan.wang/2020/12/21/%E5%92%8C-equals-%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckj02nnwy00031lr7c5c9clg2" data-title="== 和 equals 的区别" class="article-share-link">Share</a>
       
       
       
@@ -169,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cincan.wang/2020/12/19/rust/" data-id="ckj02h01e000112poal3x6bx4" data-title="rust" class="article-share-link">Share</a>
+      <a data-url="http://cincan.wang/2020/12/19/rust/" data-id="ckj02nnww00011lr7hekd5idn" data-title="rust" class="article-share-link">Share</a>
       
       
       
@@ -207,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cincan.wang/2020/12/18/first-application/" data-id="ckj02h01a000012poc3aw36pv" data-title="first-application" class="article-share-link">Share</a>
+      <a data-url="http://cincan.wang/2020/12/18/first-application/" data-id="ckj02nnws00001lr78o1z5d9m" data-title="first-application" class="article-share-link">Share</a>
       
       
       
@@ -248,6 +291,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/12/22/%E4%B8%A4%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84-hashCode-%E7%9B%B8%E5%90%8C%EF%BC%8C%E5%88%99-equals-%E4%B9%9F%E4%B8%80%E5%AE%9A%E4%B8%BA-true%EF%BC%8C%E5%AF%B9%E5%90%97%EF%BC%9F/">两个对象的 hashCode()相同，则 equals()也一定为 true，对吗？</a>
+          </li>
         
           <li>
             <a href="/2020/12/21/%E5%92%8C-equals-%E7%9A%84%E5%8C%BA%E5%88%AB/">== 和 equals 的区别</a>
